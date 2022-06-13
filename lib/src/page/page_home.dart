@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'page_find.dart';
 import 'page_list_server.dart';
 import 'page_me.dart';
@@ -15,8 +16,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //沉浸式
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+        statusBarColor: Colors.white,  statusBarIconBrightness: Brightness.dark ));
     return MaterialApp(
+      //隐藏debug 沉浸式不那么尴尬一点 漏一半
+      debugShowCheckedModeBanner: false,
       home: MyNavigationBar(_msg),
+      // theme: ThemeData(primarySwatch: Colors.red, primaryColor: Colors.white),  //设置App主题
     );
   }
 }

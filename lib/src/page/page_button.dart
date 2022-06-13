@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'extend.dart';
 
 class ButtonRouter extends StatelessWidget {
@@ -11,7 +12,12 @@ class ButtonRouter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(todo),
+        systemOverlayStyle:
+            const SystemUiOverlayStyle(statusBarColor: Colors.white, statusBarIconBrightness: Brightness.dark),
+        title: Text(
+          todo,
+          style: TextStyle(color: Colors.white),
+        ),
         leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
@@ -60,10 +66,12 @@ class ButtonRouter extends StatelessWidget {
             ),
           ),
           RawMaterialButton(
-            onPressed: () {Navigator.pop(context);},
+            onPressed: () {
+              Navigator.pop(context);
+            },
             // elevation: 2.0,
             fillColor: Colors.grey,
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios_new_rounded,
               color: Colors.white,
               size: 24.0,
@@ -75,7 +83,7 @@ class ButtonRouter extends StatelessWidget {
             onPressed: () {},
             color: Colors.grey,
             textColor: Colors.white,
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios_new_rounded,
               size: 24,
             ),
