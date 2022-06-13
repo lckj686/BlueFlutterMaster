@@ -27,3 +27,5 @@ web部署工具：
 【github地址】:[https://github.com/lckj686/BlueFlutterMaster](https://github.com/lckj686/BlueFlutterMaster)
 【web部署地址】：[http://leon.fzcw666.com/#/](http://leon.fzcw666.com/#/)
 
+### 四、web打包问题：
+可以run，部署了看不到，改用指令打包：flutter build web --web-renderer html
