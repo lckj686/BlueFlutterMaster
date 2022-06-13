@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'page_find.dart';
 import 'page_list_server.dart';
 import 'page_me.dart';
+import 'page_news.dart';
 
 /// This Widget is the main application widget.
 class HomePage extends StatelessWidget {
@@ -34,7 +35,7 @@ class _MyNavigationBarState extends State<MyNavigationBar> {
   String _msg = "0";
 
   static final List<Widget> _widgetOptions = <Widget>[
-    ListMockPage(),
+    TabBarPage(),
     const FindPage(title: "find"),
     const MinePage(title: "mine")
   ];

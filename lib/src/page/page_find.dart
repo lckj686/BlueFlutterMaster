@@ -2,7 +2,9 @@ import 'dart:ui';
 import 'package:LeonFlutterMaster/src/page/page_news_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'extend.dart';
 import 'page_button.dart';
+import 'page_tabbar.dart';
 
 class FindPage extends StatefulWidget {
   const FindPage({Key? key, required this.title}) : super(key: key);
@@ -14,7 +16,7 @@ class FindPage extends StatefulWidget {
 }
 
 class _FindPageState extends State<FindPage> {
-  var list = ["Button"];
+  var list = ["Button", "TabBarView"];
 
   String _getStr(int index) {
     if (index < list.length) {
@@ -51,21 +53,28 @@ class _FindPageState extends State<FindPage> {
               return GestureDetector(
                   onTap: () {
                     print('row $index');
-                    Fluttertoast.showToast(
-                        msg: "onTap $index",
-                        toastLength: Toast.LENGTH_SHORT,
-                        gravity: ToastGravity.CENTER,
-                        timeInSecForIosWeb: 1,
-                        backgroundColor: Colors.red,
-                        textColor: Colors.white,
-                        fontSize: 16.0);
-                    if (index == 1) {
 
-                    } else {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => ButtonRouter(todo: _getStr(index))),
-                      );
+                    switch (index) {
+                      case 0:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ButtonRouter(todo: _getStr(index))),
+                          );
+                        }
+                        break;
+                      case 1:
+                        {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => TabBarPage(todo: _getStr(index))),
+                          );
+                        }
+                        break;
+
+                      default:
+                        toast("还未添加");
+                        break;
                     }
                   },
                   child: Card(

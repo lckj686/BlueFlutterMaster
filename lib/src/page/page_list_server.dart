@@ -112,7 +112,7 @@ class _ListMockPageState extends State<ListMockPage> {
                                 child: Text('${bean.title}',
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 2,
-                                    style: TextStyle(color: Color(0xff1e1e1e), fontSize: 17)),
+                                    style: TextStyle(color: Color(0xff111111), fontSize: 17)),
                                 flex: 1),
                             Expanded(
                                 child: Text('${bean.src}  ${bean.time}',
