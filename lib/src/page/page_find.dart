@@ -1,7 +1,8 @@
 import 'dart:ui';
+import 'package:LeonFlutterMaster/src/page/page_news_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'router_button.dart';
+import 'page_button.dart';
 
 class FindPage extends StatefulWidget {
   const FindPage({Key? key, required this.title}) : super(key: key);
@@ -31,7 +32,7 @@ class _FindPageState extends State<FindPage> {
       ),
       body: Center(
           child: Container(
-        margin: EdgeInsets.all(15),
+        margin: const EdgeInsets.all(15),
         child: GridView.builder(
 
             ///子Item排列规则
@@ -58,10 +59,14 @@ class _FindPageState extends State<FindPage> {
                         backgroundColor: Colors.red,
                         textColor: Colors.white,
                         fontSize: 16.0);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ButtonRouter(todo: _getStr(index))),
-                    );
+                    if (index == 1) {
+
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ButtonRouter(todo: _getStr(index))),
+                      );
+                    }
                   },
                   child: Card(
                     color: Color(0xFF8cccf4),

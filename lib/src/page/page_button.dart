@@ -1,7 +1,5 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
-
 import 'extend.dart';
 
 class ButtonRouter extends StatelessWidget {
@@ -61,6 +59,29 @@ class ButtonRouter extends StatelessWidget {
               ),
             ),
           ),
+          RawMaterialButton(
+            onPressed: () {Navigator.pop(context);},
+            // elevation: 2.0,
+            fillColor: Colors.grey,
+            child: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              color: Colors.white,
+              size: 24.0,
+            ),
+            padding: EdgeInsets.only(right: 4.0),
+            shape: CircleBorder(),
+          ),
+          MaterialButton(
+            onPressed: () {},
+            color: Colors.grey,
+            textColor: Colors.white,
+            child: Icon(
+              Icons.arrow_back_ios_new_rounded,
+              size: 24,
+            ),
+            padding: EdgeInsets.all(15),
+            shape: CircleBorder(),
+          )
         ],
       ),
     );

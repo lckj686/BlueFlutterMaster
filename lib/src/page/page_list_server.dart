@@ -4,9 +4,9 @@ import 'dart:ui';
 import 'package:dio/adapter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:dio/dio.dart';
 import '../bean/base_result_bean.dart';
+import 'page_news_detail.dart';
 
 class ListMockPage extends StatefulWidget {
   ListMockPage({Key? key}) : super(key: key);
@@ -84,15 +84,10 @@ class _ListMockPageState extends State<ListMockPage> {
     return GestureDetector(
       onTap: () {
         setState(() {
-          print('row $i');
-          Fluttertoast.showToast(
-              msg: "onTap $i",
-              toastLength: Toast.LENGTH_SHORT,
-              gravity: ToastGravity.CENTER,
-              timeInSecForIosWeb: 1,
-              backgroundColor: Colors.red,
-              textColor: Colors.white,
-              fontSize: 16.0);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => NewsDetailPage(list[i].weburl ?? "")),
+          );
         });
       },
       child: Container(
